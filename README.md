@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Timer
 
-## Available Scripts
+<img src="https://i.imgur.com/C81a9kw.gif">
 
-In the project directory, you can run:
+Let's build a timer with React, and learn some very important lessons about `useState` and `useEffect` along the way.
 
-### `yarn start`
+We will be learning about how `useState` modifies values, how `useEffect` allows us to run code sometimes, and what the heck a 'cleanup function' is.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Goals
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* [ ] Create a working timer. It should start counting when the page loads via `useEffect`.
+* [ ] Track the number of seconds with `useState`.
+* [ ] Have a 'pause' button stop the timer.
+* [ ] Have a 'play' button re-start the timer.
+* [ ] Have a 'reset' button clear and stop the timer.
 
-### `yarn test`
+## Stretch Goals
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [ ] Display the pause button when the timer is running, and start button when the timer is stopped.
+* [ ] Disable the reset button when it isn't useful.
+* [ ] Display the time in a [hh:]mm:ss format.
+* [ ] Make your timer keep track of time more accurately by using [`Date.now()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now) instead of assuming exactly a second has passed.
+* [ ] Make it a count down timer, instead of a stopwatch.
+* [ ] Allow the user to set the amount of time with an input.
+* [ ] Try to figure out the weird css to get the circle (and animation) around the time.
 
-### `yarn build`
+## Notes
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* You can have a callback function run repeatedly with some delay using [`window.setInterval(func, delay)`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval).
+* [`useEffect`](https://reactjs.org/docs/hooks-reference.html#useeffect) let's us run code with 'side effects' _sometimes_.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Install and Use
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run and edit the project, clone the project to your computer, `cd` into the project directory and follow the instructions below for your javascript pacakge manager of choice.
 
-### `yarn eject`
+### yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In the project directory run `yarn install` to install the depenencies, and `yarn start` to star the development server. It should open a browser tab to `localhost:3000`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### npm
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+In the project directory run `npm install` to install the depenencies, and `npm start` to star the development server. It should open a browser tab to `localhost:3000`.

@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  background: #282937;
+  font-family: 'Helvetica', 'Helvetica Nueue', sans-serif;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+.app {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #fafafa;
+}
+
+.time-circle {
+  width: 100%;
+  max-width: 20rem;
+  position: relative;
+  display: grid;
+
+  &::before {
+    border: 3px solid #fafafa;
+    border-radius: 100%;
+    animation: 1s linear infinite alternate abberation, 4s linear infinite spin;
+    padding-top: 100%;
+    content: "";
+    position: relative;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &.paused::before {
+    animation: none;
+    transition: 0.3s transform;
+  }
+}
+
+@keyframes abberation {
+  from {
+    box-shadow: 0 0 0 0 #CB2918, 0 0 0 0 #56719A;
+  }
+  to {
+    box-shadow: 0.25rem 0.125rem 0 0 #CB2918, -0.25rem -0.125rem 0 0 #56719A;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.time {
+  padding-top: 1rem; // to make it look centered 
+  font-size: 5rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  justify-items: center;
+
+  .play-pause {
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background: #6C7CB3;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: white;
+
+    &:hover {
+      background: darken(#6C7CB3, 10%);
+    }
+  }
+
+  .reset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: #fafafa;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+}
